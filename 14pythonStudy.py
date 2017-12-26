@@ -19,8 +19,8 @@ def pal(s):
 		if l % 2 == 0:
 			for k, v in d.items():
 				if v % 2 != 0:
-					return 'Not a palindrome.'
-			return 'Palindrome.'
+					return 'Not a permutation of a palindrome.'
+			return 'Permutation of a palindrome.'
 
 		# Odd letter string.
 		if l % 2 == 1:
@@ -29,15 +29,15 @@ def pal(s):
 				if v % 2 != 0:
 					odd_count += 1
 			if odd_count != 1:
-				return 'Not a palindrome.'
-			return 'Palindrome.'
+				return 'Not a permutation of a palindrome.'
+			return 'Permutation of a palindrome.'
 
 	# All else.
 	except:
 		return 'Input must be a string.'
 
 def main():
-	s = raw_input('\nType in a string to test if it\'s a palindrome.\n\n')
+	s = raw_input('\nType in a string to test if it\'s a permutation of a palindrome.\n\n')
 	r = pal(s)
 	print r
 
