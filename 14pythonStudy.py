@@ -1,5 +1,12 @@
 #1.4: Check if a string is a permutation of a palindrome.
 
+"""
+Steps:
+1. Do a frequency distribution of each letter.
+2. Determine if it's odd or even, then check if it has the proper distribution.
+
+"""
+
 def tally(s):
 	l = len(s)
 	d = {}
