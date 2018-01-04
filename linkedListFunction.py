@@ -3,7 +3,7 @@
 #1: Define a single-linked list node. It should store the data, and have a
 #   property for referencing the next item.
 
-class listNode(self, data):
+class listNode:
 
     # Initializes the class with properties to store the data and the next item.
 
@@ -24,11 +24,6 @@ class listNode(self, data):
         else:
             return False
 
-#Create 3 nodes, using the class above.
-node1 = listNode(15)
-node2 = listNode(8.2)
-node3 = listNode("Berlin")
-
 #2: We then make a class for a single-linked list, using the nodes defined above.
 
 class singleLinkedList:
@@ -45,8 +40,8 @@ class singleLinkedList:
     #Adds an item at the end of the list.
 
         #Check to see if the item is a node; if not, convert it to one.
-        if not isinstance(item, ListNode):
-            item = ListNode(item)
+        if not isinstance(item, listNode):
+            item = listNode(item)
 
         #If it's the first item, set it as the head.
         if self.head == None:
@@ -61,4 +56,29 @@ class singleLinkedList:
 
         return
 
-    
+    def list_length(self):
+    #This counts the nodes in a linked List and returns the length.
+
+        count = 0
+        current_node = self.head
+
+        while current_node is not None:
+            count += 1
+            current_node = current_node.next
+
+        return count
+
+def main():
+    node1 = listNode(15)
+    node2 = listNode(8.2)
+    node3 = listNode("Berlin")
+
+    lister = singleLinkedList()
+    lister.add_list_item(node1)
+    lister.add_list_item(node2)
+    lister.add_list_item(node3)
+    print lister.list_length()
+
+
+if __name__ == "__main__":
+    main()
