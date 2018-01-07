@@ -1,3 +1,6 @@
+#O(2N) runtime (simplifies to O(N) runtime.)
+
+
 from collections import deque
 
 def main():
